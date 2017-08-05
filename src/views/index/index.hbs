@@ -14,5 +14,18 @@
         </p>
     </section>
 
-    {{> index/projects}}
+    <section class="projects">
+        <h2 class="title">Projects</h2>
+        {{#each projects}}
+        <div class="project">
+            <h2 class="project-title"><a href="{{url}}">{{name}}</a></h2>
+            <p class="project-stat">
+            <span class="progress"><img src="https://img.shields.io/badge/progress-{{progress}}-{{getProgressColor progress}}.svg?style=flat-square&maxAge=2592000" alt="progress"></span>
+            <span class="version"><img src="https://img.shields.io/badge/latest-v{{version}}-{{getVersionColor version}}.svg?style=flat-square&maxAge=2592000" alt="version"></span>
+            <span class="issues"><img src="http://githubbadges.herokuapp.com/{{githubId}}/{{repositoryName}}/issues?style=flat-square&maxAge=2592000" alt="issues"></span>
+        </p>
+        <p class="project-desc"><a href="{{url}}">{{description}}</a></p>
+        </div>
+        {{/each}}
+    </section>
 </section>

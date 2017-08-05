@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var ts = require('gulp-typescript');
-var tsProject = ts.createProject('tsconfig.json');
+var tsProject = ts.createProject('./tsconfig.json');
 var tslint = require('gulp-tslint');
 var mocha = require('gulp-mocha');
 var concat = require('gulp-concat');
@@ -9,15 +9,10 @@ var merge = require('merge-stream');
 var sass = require('gulp-sass');
 var del = require('del');
 var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
 var beep = require('beepbeep');
 
 function onError(err){
-    notify.onError({
-        title: "gulp error in " + err.plugin,
-        message: err.toString()
-    })(err);
-    beep(3);
+    beep();
     this.emit('end');
 };
 
@@ -29,7 +24,7 @@ tasks.clean = () => {
 
 tasks.buildTypeScript = () => {
     var tsResult = gulp.src('src/**/*.ts')
-                    .pipe(plumber({errorHandeler:onError }))
+                    .pipe(plumber({ errorHandler:onError }))
                     .pipe(tsProject());
 
     return tsResult.js.pipe(gulp.dest('dist'));
@@ -37,14 +32,14 @@ tasks.buildTypeScript = () => {
 
 tasks.buildView = () => {
     return gulp.src('src/views/**/*.hbs')
-            .pipe(plumber({errorHandeler:onError }))
+            .pipe(plumber({ errorHandler:onError }))
             .pipe(gulp.dest('dist/views'));
 }
 
 tasks.buildPublic = () => {
     return merge(
         gulp.src(['public/**/*', '!public/css/**/*'])
-            .pipe(plumber({errorHandeler:onError }))
+            .pipe(plumber({ errorHandler:onError }))
             .pipe(gulp.dest('dist/public')),
         gulp.src('public/css/**/*.scss')
             .pipe(sass().on('error', sass.logError))
@@ -55,13 +50,13 @@ tasks.buildPublic = () => {
 
 tasks.buildStatic = () => {
     return gulp.src('src/*env.*')
-            .pipe(plumber({errorHandeler:onError }))
+            .pipe(plumber({ errorHandler:onError }))
             .pipe(gulp.dest('dist'));
 }
 
 tasks.lint = () => {
     return gulp.src(['src/**/*.ts', 'test/**/*.test.ts'])
-        .pipe(plumber({errorHandeler:onError }))
+        .pipe(plumber({ errorHandler:onError }))
         .pipe(tslint({
             configuration: 'tslint.json',
             formatter: 'verbose'
@@ -71,7 +66,7 @@ tasks.lint = () => {
 
 tasks.test = () => {
     return gulp.src('test/**/*.test.ts')
-        .pipe(plumber({errorHandeler:onError }))
+        .pipe(plumber({ errorHandler:onError }))
         .pipe(mocha({
             compilers: ['ts:ts-node/register'],
             reporter: 'nyan'

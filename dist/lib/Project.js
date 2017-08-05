@@ -34,28 +34,56 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 exports.__esModule = true;
-var express = require("express");
-var Project_1 = require("./lib/Project");
-var projectHelpers = require("./views/helpers/project");
-var router = express.Router();
-router.get("/", function (req, res, err) { return __awaiter(_this, void 0, void 0, function () {
-    var projects;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, Project_1["default"].findProjects({})];
-            case 1:
-                projects = _a.sent();
-                res.render("index", {
-                    projects: projects,
-                    helpers: {
-                        getProgressColor: projectHelpers.getProgressColor,
-                        getVersionColor: projectHelpers.getVersionColor
-                    }
-                });
-                return [2 /*return*/];
-        }
-    });
-}); });
-module.exports = router;
+var configs_1 = require("../configs");
+var projects = [
+    {
+        name: "Passthrough",
+        url: "/projects/passthrough",
+        progress: "idea",
+        version: "0.0",
+        repositoryName: "passthrough",
+        githubId: configs_1.owner.githubId,
+        description: "Passthrough is an API gateway, which can be configured by restful APIs. Of course, it’s scalable and supports UI for API providers and their clients."
+    },
+    {
+        name: "Light JSON Storage",
+        url: "/projects/light-json-storage",
+        progress: "idea",
+        version: "0.0",
+        repositoryName: "light-json-storage",
+        githubId: configs_1.owner.githubId,
+        description: "This project is for storing JSON data via restful APIs such as CRUD. Users can create data scheme and store their data programmatically. Since the storage resource is limited, authorization is required."
+    },
+    {
+        name: "Planner CLI",
+        url: "/projects/planner-cli",
+        progress: "alpha",
+        version: "0.5",
+        repositoryName: "planner-cli",
+        githubId: configs_1.owner.githubId,
+        description: "Planner is a task management tool in CLI. It supports basic operations such as adding, listing, searching and deleting tasks. In addition, it features fuzzy search and commenting to track tasks. You can install it through NPM."
+    },
+    {
+        name: "Red-Green TDD for Git",
+        url: "/projects/red-green-tdd",
+        progress: "idea",
+        version: "0.0",
+        repositoryName: "red-green-tdd",
+        githubId: configs_1.owner.githubId,
+        description: "This project introduces Red-Green cycle, the shorten version of Red-Green-Refactor cycle of TDD discipline. It also advices you on managing your commits in this discipline."
+    },
+];
+var Project = (function () {
+    function Project() {
+    }
+    Project.findProjects = function (conditions) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, Promise.resolve(projects)];
+            });
+        });
+    };
+    return Project;
+}());
+exports["default"] = Project;

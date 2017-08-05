@@ -6,7 +6,7 @@
         "lib": ["es5", "es6"]
     },
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
     ],
     "exclude": [
         "node_modules",

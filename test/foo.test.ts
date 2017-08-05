@@ -1,8 +1,7 @@
-import {expect} from 'chai';
+import {expect} from "chai";
 
-
-describe('wtf', () => {
-    it('should say fuck', () => {
-        expect('fuck').to.be.equal('fuck');
+describe("wtf", () => {
+    it("should say fuck", () => {
+        expect("fuck").to.be.equal("fuck");
     });
 });

@@ -24,14 +24,17 @@
         display: inline-block;
         vertical-align: top; }
       #index .projects .project:nth-child(odd) {
-        margin-left: 2%; } }
-  @media only screen and (min-width: 1025px) and (-webkit-min-device-pixel-ratio: 0) {
-    #index .projects .project-desc {
-      height: 50.7px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden; } }
+        margin-left: 2%; }
+      #index .projects .project-desc {
+        word-wrap: break-word;
+        word-break: keep-all; } }
+    @media only screen and (min-width: 1025px) and (-webkit-min-device-pixel-ratio: 0) {
+      #index .projects .project-desc {
+        height: 84.5px;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden; } }
   #index .projects .project-title {
     font-size: 1.9em; }
   #index .projects .project-stat {
@@ -47,7 +50,12 @@ body {
   height: 100%; }
 
 a, a:link, a:visited {
-  color: white; }
+  color: white;
+  text-decoration: none; }
+
+a:hover {
+  color: white;
+  text-decoration: underline; }
 
 #main {
   font-size: 13px;
