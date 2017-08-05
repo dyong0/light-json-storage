@@ -1,0 +1,145 @@
+#index .about .title {
+  font-size: 1.9em; }
+
+#index .about .desc, #index .about .msg {
+  margin-top: 1.0em; }
+
+#index .about .desc .position, #index .about .desc .email {
+  display: block; }
+
+#index .projects {
+  margin-top: 3em; }
+  #index .projects .title {
+    font-size: 1.9em;
+    margin-bottom: 0.7em; }
+  #index .projects .project {
+    margin-bottom: 2em; }
+  @media only screen and (min-width: 1025px) {
+    #index .projects {
+      margin-top: 9em; }
+      #index .projects .project {
+        position: relative;
+        top: 0;
+        width: 48%;
+        display: inline-block;
+        vertical-align: top; }
+      #index .projects .project:nth-child(odd) {
+        margin-left: 2%; } }
+  @media only screen and (min-width: 1025px) and (-webkit-min-device-pixel-ratio: 0) {
+    #index .projects .project-desc {
+      height: 50.7px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden; } }
+  #index .projects .project-title {
+    font-size: 1.9em; }
+  #index .projects .project-stat {
+    margin-top: 0.5em; }
+  #index .projects .project-desc {
+    margin-top: 0.5em; }
+
+html, body {
+  width: 100%;
+  color: white; }
+
+body {
+  height: 100%; }
+
+a, a:link, a:visited {
+  color: white; }
+
+#main {
+  font-size: 13px;
+  font-family: Verdana, Georgia, Arial;
+  background: transparent;
+  width: 60%;
+  margin: 5% auto; }
+  #main a, #main p, #main span, #main h1, #main h2, #main h3, #main h4, #main h5 {
+    line-height: 1.3; }
+  @media (max-width: 480px) {
+    #main {
+      width: 90%;
+      margin: 5% auto; } }
+
+#background {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url("/static/image/background.jpg") 100% 100% no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+@keyframes background-transition {
+  from {
+    opacity: 1.0; }
+  to {
+    opacity: 0; } }
+
+#background:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  background-color: #181c21;
+  opacity: 0;
+  animation-name: background-transition;
+  animation-duration: 2s; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+
