@@ -15,8 +15,6 @@
   "dependencies": {
     "compression": "^1.7.0",
     "express": "^4.15.3",
-    "express-handlebars": "^3.0.0",
-    "handlebars-runtime": "^1.0.12",
     "mongoose": "^4.11.5",
     "node-env-file": "^0.1.8",
     "winston": "^2.3.1"
@@ -42,7 +40,6 @@
     "gulp-typescript": "^3.2.1",
     "gulp-watch": "^4.3.11",
     "gulp-wrap": "^0.13.0",
-    "handlebars": "^4.0.10",
     "main-bower-files": "^2.13.1",
     "merge-stream": "^1.0.1",
     "mocha": "^3.4.2",
