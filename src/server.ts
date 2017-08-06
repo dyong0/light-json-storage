@@ -3,6 +3,7 @@ import * as express from "express";
 import * as exphbs from "express-handlebars";
 import * as path from "path";
 import * as winston from "winston";
+import * as compression from "compression";
 
 // load environments
 env(__dirname + "/env.common");
@@ -10,10 +11,13 @@ env(__dirname + "/env." + process.env.ENV.toLowerCase());
 
 const app = express();
 
+// pre-middlewares
+app.use(compression());
+
 // routes
 app.use("/", require("./routes"));
 
-// middlewares
+// post-middlewares
 app.use("/static", express.static(path.join(__dirname, "public")));
 app.use((err, req, res, next) => {
     next(err);

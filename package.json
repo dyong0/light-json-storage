@@ -13,6 +13,7 @@
     "serve": "./node_modules/nodemon/bin/nodemon.js -I --watch dist ./dist/server.js"
   },
   "dependencies": {
+    "compression": "^1.7.0",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "handlebars-runtime": "^1.0.12",
