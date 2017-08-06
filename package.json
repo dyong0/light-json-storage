@@ -10,7 +10,7 @@
     "build": "./node_modules/gulp/bin/gulp.js build",
     "rebuild": "./node_modules/gulp/bin/gulp.js rebuild",
     "watch-build": "./node_modules/gulp/bin/gulp.js watch-build",
-    "serve": "./node_modules/nodemon/bin/nodemon.js --watch dist ./dist/server.js"
+    "serve": "./node_modules/nodemon/bin/nodemon.js -I --watch dist ./dist/server.js"
   },
   "dependencies": {
     "express": "^4.15.3",
