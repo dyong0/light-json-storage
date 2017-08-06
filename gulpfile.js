@@ -7,6 +7,7 @@ var mocha = require('gulp-mocha');
 var concat = require('gulp-concat');
 var merge = require('merge-stream');
 var sass = require('gulp-sass');
+var mainBowerFiles = require('main-bower-files');
 var del = require('del');
 var plumber = require('gulp-plumber');
 var beep = require('beepbeep');
@@ -44,7 +45,9 @@ tasks.buildPublic = () => {
         gulp.src('public/css/**/*.scss')
             .pipe(sass().on('error', sass.logError))
             .pipe(concat('app.css'))
-            .pipe(gulp.dest('dist/public/css/'))
+            .pipe(gulp.dest('dist/public/css/')),
+        gulp.src(mainBowerFiles())
+            .pipe(gulp.dest('dist/public/vendors'))
     );
 }
 
